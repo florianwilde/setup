@@ -12,7 +12,8 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAq6JKlWIiTKeTXIAzTVEjBnpjNzFZLL+8N/SEZuVBuPe9
 EOF
 
 # Prompt-Anpassung für den root-Benutzer
-echo "export PS1='\[\033[01;31m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '" >> /root/.bashrc
+echo "export PS1="\n┌[\[$(tput bold)\]\[$(tput setaf 0)\]\d \t\[$(tput sgr0)\]]-[\[$(tput setaf 2)\]\w\[$(tput sgr0)\]]\n└[\[$(tput setaf 1)\]\[$(tput bold)\]\u\[$(tput sgr0)\]@\[$(tput setaf 4)\]\[$(tput bold)\]\h\[$(tput sgr0)\]]-> \[$(tput setaf 2)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+" >> /root/.bashrc
 
 # Aktualisieren der aktuellen Shell-Umgebung
 source /root/.bashrc
